@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right top,
+    #331fbb,
+    #1c2199,
+    #0d1f78,
+    #0c1a56,
+    #0e1435,
+    #151834,
+    #1a1c32,
+    #1f2031,
+    #30314f,
+    #424470,
+    #555792,
+    #6a6ab5
+  );
+  overflow: hidden;
+}
+
+.container {
+  width: 40em;
+  height: 40em;
+  position: relative;
+  font-size: 6px;
+}
+
+img {
+  height: 130%;
+  width: 130%;
+}
+
+.sun {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  top: 15em;
+  left: 15em;
+  border-radius: 50%;
+  box-shadow: 0 0 3em rgb(255, 128, 0);
+  animation: orbit 50s linear infinite;
+}
+
+.planet {
+  position: absolute;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  border-width: 0.3em 0.2em 0 0;
+  border-radius: 50%;
+}
+
+.planet::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: orbit 30s linear infinite;
+}
+
+/* .......................... */
+
+.mercury::before {
+  background-image: url(images/mercury.png);
+  background-size: cover;
+  top: 1.5em;
+  right: 0.8em;
+  width: 2em;
+  height: 2em;
+}
+
+.mercury {
+  top: 12.5em;
+  left: 12.5em;
+  width: 15em;
+  height: 15em;
+  animation: orbit 88s linear infinite;
+}
+
+/* .......................... */
+.venus::before {
+  top: 2.3em;
+  right: 1.8em;
+  width: 2em;
+  height: 2em;
+  background-image: url(images/venus.png);
+  background-size: cover;
+}
+
+.venus {
+  top: 10em;
+  left: 10em;
+  width: 20em;
+  height: 20em;
+  animation: orbit 22.5s linear infinite;
+}
+/* .......................... */
+
+.earth::before {
+  top: 3em;
+  right: 0em;
+  width: 5em;
+  height: 5em;
+  background-image: url(images/earth.png);
+  background-size: cover;
+}
+
+.earth {
+  top: 6em;
+  left: 6em;
+  width: 28em;
+  height: 28em;
+  animation: orbit 36.5s linear infinite;
+}
+
+.moon::before {
+  top: 0.8em;
+  right: 0.2em;
+  width: 1.2em;
+  height: 1.2em;
+  background-image: url(images/moon.png);
+  background-size: cover;
+}
+
+.moon {
+  top: 2em;
+  right: -1em;
+  width: 7em;
+  height: 7em;
+  animation: orbit 2.7s linear infinite;
+}
+
+.mars::before {
+  top: 2rem;
+  right: 1em;
+  width: 4.5em;
+  height: 4.5em;
+  background-image: url(images/mars.png);
+  background-size: cover;
+}
+
+.mars {
+  top: 1.2em;
+  left: 2.2em;
+  width: 38em;
+  height: 38em;
+  animation: orbit 68.7s linear infinite;
+}
+
+.jupiter:before {
+  top: 2.1rem;
+  right: 2.6em;
+  width: 7em;
+  height: 7em;
+  background-image: url(images/jupiter.png);
+  background-size: cover;
+}
+
+.jupiter {
+  top: -3.5em;
+  left: -3.5em;
+  width: 52.7em;
+  height: 52.7em;
+  animation: orbit 43.3s linear infinite;
+}
+
+.saturn:before {
+  top: 4.1rem;
+  right: 2.6em;
+  width: 6.2em;
+  height: 6.2em;
+  background-image: url(images/saturn.png);
+  background-size: cover;
+}
+
+.saturn {
+  top: -8.5em;
+  left: -8.5em;
+  width: 64.7em;
+  height: 64.7em;
+  animation: orbit 10.75s linear infinite;
+}
+.uranus:before {
+  top: 4rem;
+  right: 5em;
+  width: 5.8em;
+  height: 5.8em;
+  background-image: url(images/uranus.png);
+  background-size: cover;
+}
+
+.uranus {
+  top: -13.5em;
+  left: -13.5em;
+  width: 75.7em;
+  height: 75.7em;
+  animation: orbit 30.68s linear infinite;
+}
+.neptune:before {
+  top: 5.1rem;
+  right: 5.6em;
+  width: 5em;
+  height: 5em;
+  background-image: url(images/neptune.png);
+  background-size: cover;
+}
+
+.neptune {
+  top: -17.8em;
+  left: -17.8em;
+  width: 88.2em;
+  height: 88.2em;
+  animation: orbit 60.19s linear infinite;
+}
+.pluto:before {
+  top: 6.1rem;
+  right: 8.6em;
+  width: 4.5em;
+  height: 4.5em;
+  background-image: url(images/pluto.png);
+  background-size: cover;
+}
+
+.pluto {
+  top: -23.5em;
+  left: -22.5em;
+  width: 98.7em;
+  height: 98.7em;
+  animation: orbit 36.6s linear infinite;
+}
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
